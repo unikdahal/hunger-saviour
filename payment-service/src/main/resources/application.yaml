@@ -1,20 +1,19 @@
-server:
-  port: 9090
 
 spring:
   application:
-    name: restaurant-service
+    name: payment-service
   datasource:
-    url: jdbc:mysql://localhost:3306/restaurants?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/payments?createDatabaseIfNotExist=true
     username: root
     password: root
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-
 eureka:
   client:
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
+server:
+  port: 9091
