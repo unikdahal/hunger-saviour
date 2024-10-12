@@ -15,6 +15,7 @@
 
   <modules>
     <module>restaurant-service</module>
+    <module>payment-service</module>
   </modules>
 
   <build>
