@@ -15,7 +15,6 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 public class RestaurantMenuDTO {
 
-
     private Integer restaurantMenuId;
 
     @NotBlank(message = "Restaurant menuItem name is mandatory")
