@@ -9,12 +9,10 @@ import java.util.Objects;
 
 @Entity
 @Table(name="restaurants")
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class RestaurantEntity {
 
     @Id
@@ -42,19 +40,4 @@ public class RestaurantEntity {
     @ToString.Exclude
     private List<RestaurantMenuEntity> menuItems;
 
-    @Override
-    public final boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null) return false;
-        Class<?> oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass() : o.getClass();
-        Class<?> thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();
-        if (thisEffectiveClass != oEffectiveClass) return false;
-        RestaurantEntity that = (RestaurantEntity) o;
-        return getRestaurantId() != null && Objects.equals(getRestaurantId(), that.getRestaurantId());
-    }
-
-    @Override
-    public final int hashCode() {
-        return this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass().hashCode() : getClass().hashCode();
-    }
 }
