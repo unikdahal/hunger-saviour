@@ -2,10 +2,8 @@ package com.hunger.saviour.portal.restaurant.service.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.proxy.HibernateProxy;
 
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name="restaurants")
