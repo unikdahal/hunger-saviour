@@ -1,5 +1,9 @@
 package com.hungersaviour.user.service.apis;
 
+import com.hungersaviour.user.service.dtos.AuthRequestDTO;
+import com.hungersaviour.user.service.dtos.SignUpRequestDTO;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,11 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("users")
 public class AuthAPI {
 
-    public void registerUser(){
+    @PostMapping("/signup")
+    public void registerUser(@RequestBody SignUpRequestDTO signUpRequestDTO){
 
     }
 
-    public void authenticateUser(){
+    @PostMapping("/login")
+    public void authenticateUser(@RequestBody AuthRequestDTO authRequestDTO){
 
     }
 
