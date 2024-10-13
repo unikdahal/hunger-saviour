@@ -1,7 +1,7 @@
 package com.hunger.saviour.portal.restaurant.service.utilities;
 
-import com.hunger.saviour.portal.restaurant.service.dtos.RestaurantDTO;
 import com.hunger.saviour.portal.restaurant.service.entities.RestaurantEntity;
+import com.hungersaviour.portal.commons.dtos.RestaurantDTO;
 
 public class RestaurantUtility {
 

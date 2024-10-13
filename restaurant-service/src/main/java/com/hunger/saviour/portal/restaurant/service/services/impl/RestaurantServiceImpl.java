@@ -1,10 +1,11 @@
 package com.hunger.saviour.portal.restaurant.service.services.impl;
 
-import com.hunger.saviour.portal.restaurant.service.dtos.RestaurantDTO;
 import com.hunger.saviour.portal.restaurant.service.entities.RestaurantEntity;
 import com.hunger.saviour.portal.restaurant.service.repositories.RestaurantRepository;
 import com.hunger.saviour.portal.restaurant.service.services.RestaurantService;
 import com.hunger.saviour.portal.restaurant.service.utilities.RestaurantUtility;
+import com.hungersaviour.portal.commons.dtos.RestaurantDTO;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -19,7 +20,7 @@ public class RestaurantServiceImpl implements RestaurantService {
     private final RestaurantRepository restaurantRepository;
 
     @Override
-    public void createRestaurant(RestaurantDTO restaurantDTO) {
+    public void createRestaurant(@Valid RestaurantDTO restaurantDTO) {
         RestaurantEntity restaurantEntity = RestaurantUtility.convertDTOToEntity(restaurantDTO);
         this.restaurantRepository.save(restaurantEntity);
     }

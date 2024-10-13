@@ -1,7 +1,7 @@
 package com.hunger.saviour.portal.restaurant.service.apis;
 
-import com.hunger.saviour.portal.restaurant.service.dtos.RestaurantDTO;
 import com.hunger.saviour.portal.restaurant.service.services.RestaurantService;
+import com.hungersaviour.portal.commons.dtos.RestaurantDTO;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,8 +22,8 @@ public class RestaurantAPI {
     }
 
     @GetMapping("/{offset}/{pagesize}")
-    public ResponseEntity<?> getRestaurants(@PathVariable int offset, @PathVariable int pagesize) {
-        this.restaurantService.getRestaurants(offset, pagesize);
+    public ResponseEntity<?> getRestaurants(@PathVariable int offset, @PathVariable int pageSize) {
+        this.restaurantService.getRestaurants(offset, pageSize);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
