@@ -1,4 +1,4 @@
-package com.hunger.saviour.portal.restaurant.service.dtos;
+package com.hungersaviour.portal.commons.dtos;
 
 import com.hunger.saviour.portal.restaurant.service.entities.RestaurantEntity;
 import jakarta.validation.constraints.NotBlank;
@@ -32,5 +32,5 @@ public class RestaurantMenuDTO {
     @NotBlank(message = "Restaurant menu item price is mandatory")
     private Double menuItemPrice;
 
-    private RestaurantEntity restaurant;
+    private RestaurantDTO restaurant;
 }

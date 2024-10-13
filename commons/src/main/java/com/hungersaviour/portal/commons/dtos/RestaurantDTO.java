@@ -1,6 +1,5 @@
-package com.hunger.saviour.portal.restaurant.service.dtos;
+package com.hungersaviour.portal.commons.dtos;
 
-import com.hunger.saviour.portal.restaurant.service.entities.RestaurantMenuEntity;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -34,5 +33,5 @@ public class RestaurantDTO {
     private List<String> menuTypes;
 
     @NotNull(message = "There must be at least one menu item")
-    private List<RestaurantMenuEntity> menuItems;
+    private List<RestaurantMenuDTO> menuItems;
 }

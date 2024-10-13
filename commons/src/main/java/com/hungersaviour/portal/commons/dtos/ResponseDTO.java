@@ -1,4 +1,4 @@
-package com.hunger.saviour.portal.restaurant.service.dtos;
+package com.hungersaviour.portal.commons.dtos;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
