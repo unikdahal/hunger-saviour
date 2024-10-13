@@ -22,6 +22,9 @@ public class RestaurantEntity {
     @Column(name = "restaurant_name")
     private String restaurantName;
 
+    @Column(name = "description")
+    private String description;
+
     @Column(name = "rating")
     private String rating;
 
