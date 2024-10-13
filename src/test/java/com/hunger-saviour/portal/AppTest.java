@@ -1,4 +1,4 @@
-package com.hunger-saviour.portal;
+package com.hunger.saviour.portal;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
