@@ -7,7 +7,8 @@ import com.hunger.saviour.portal.restaurant.service.services.RestaurantService;
 import com.hunger.saviour.portal.restaurant.service.utilities.RestaurantUtility;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,5 +22,10 @@ public class RestaurantServiceImpl implements RestaurantService {
     public void createRestaurant(RestaurantDTO restaurantDTO) {
         RestaurantEntity restaurantEntity = RestaurantUtility.convertDTOToEntity(restaurantDTO);
         this.restaurantRepository.save(restaurantEntity);
+    }
+
+    @Override
+    public Page<RestaurantEntity> getRestaurants(int offset, int pagesize) {
+        return this.restaurantRepository.findAll(PageRequest.of(offset, pagesize));
     }
 }

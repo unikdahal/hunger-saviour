@@ -6,10 +6,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("restaurants")
@@ -23,4 +20,11 @@ public class RestaurantAPI {
         this.restaurantService.createRestaurant(restaurantDTO);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    @GetMapping("/{offset}/{pagesize}")
+    public ResponseEntity<?> getRestaurants(@PathVariable int offset, @PathVariable int pagesize) {
+        this.restaurantService.getRestaurants(offset, pagesize);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
