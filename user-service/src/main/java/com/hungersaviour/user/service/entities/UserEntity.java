@@ -17,7 +17,7 @@ import java.util.*;
 @NoArgsConstructor
 @Table(name = "users",
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = {"username", "email"})
+                @UniqueConstraint(columnNames = "username")
         }
 )
 @Builder
@@ -30,13 +30,10 @@ public class UserEntity implements UserDetails {
     @Column(name = "username")
     private String username;
 
-    @Column(name = "email")
-    private String email;
-
     @Column(name = "password")
     private String password;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
