@@ -12,3 +12,8 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create
+
+rsa:
+  public-key: classpath:certs/public.pem
+  private-key: classpath:certs/private.pem
+
