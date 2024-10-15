@@ -1,6 +1,5 @@
 package com.hungersaviour.portal.commons.dtos;
 
-import com.hunger.saviour.portal.restaurant.service.entities.RestaurantEntity;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
