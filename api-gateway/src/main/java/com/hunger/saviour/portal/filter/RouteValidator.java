@@ -1,30 +1,21 @@
 package com.hunger.saviour.portal.filter;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
-import java.util.Set;
+import java.util.List;
 
 @Service
 @Slf4j
 public class RouteValidator {
 
     // Set of open API endpoints dynamically loaded from application.yml
-    private final Set<String> openApiEndpoints;
-
-    /**
-     * Constructor to initialize the open API endpoints.
-     * This value is injected from the application's configuration.
-     *
-     * @param openApiEndpoints List of endpoints from application.yml
-     */
-    public RouteValidator(@Value("${application.open-api-endpoints}") Set<String> openApiEndpoints) {
-        this.openApiEndpoints = Collections.unmodifiableSet(openApiEndpoints);
-    }
-
+    public static final List<String> openApiEndpoints = List.of(
+            "/users/login",
+            "/users/validate",
+            "/users/signup"
+    );
 
     /**
      * Checks if the request targets a secured endpoint.

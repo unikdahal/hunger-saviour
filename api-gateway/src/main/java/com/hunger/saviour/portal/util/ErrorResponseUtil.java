@@ -7,12 +7,15 @@ import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDateTime;
+
 /**
  * Utility class for handling and formatting error responses across the API Gateway.
  * Provides structured error responses for consistency.
  */
 @Slf4j
 public class ErrorResponseUtil {
+
 
     /**
      * Generates an error response and terminates the reactive pipeline.
@@ -61,7 +64,7 @@ public class ErrorResponseUtil {
                 .message(message)
                 .data(data)
                 .errorCode(errorCode)
-                .localTimestamp(java.time.LocalDateTime.now())
+                .localTimestamp(LocalDateTime.now())
                 .build();
     }
 }

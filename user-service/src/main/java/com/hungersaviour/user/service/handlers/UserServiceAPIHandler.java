@@ -1,6 +1,7 @@
 package com.hungersaviour.user.service.handlers;
 
-import com.hungersaviour.portal.commons.handlers.HungerSaviourGlobalExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-public class UserServiceAPIHandler extends HungerSaviourGlobalExceptionHandler {
+@RestControllerAdvice
+public class UserServiceAPIHandler{
 }
